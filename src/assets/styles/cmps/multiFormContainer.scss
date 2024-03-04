@@ -1,0 +1,25 @@
+.multi-form-container {
+    display: flex;
+    flex-direction: row;
+    width: em(940px);
+    // max-width: em(940px);
+    // max-height: em(600px);
+    height: em(600px);
+    background-color: $clrwhite;
+    border-radius: em(7.5px);
+
+    .left-side-mtc {
+        background-color: blue;
+        // flex-grow: 1;
+
+
+    }
+
+    .right-side-mtc {
+        background-color: red;
+        flex-grow: 1;
+
+
+    }
+
+}

@@ -1,0 +1,9 @@
+.home-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $clrbackGrund;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: center;
+}

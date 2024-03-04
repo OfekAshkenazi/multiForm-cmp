@@ -1,0 +1,65 @@
+// flex helpers
+.align-center {
+    align-items: center;
+}
+
+.flex {
+
+    display: flex;
+
+    >*.full {
+        flex: 1;
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+    &.space-bet {
+        justify-content: space-between;
+    }
+}
+
+.grid {
+    display: grid;
+}
+
+// Media helpers
+
+.hidden {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+.g5 {
+    gap: 5px;
+}
+.g10 {
+    gap: 10px;
+}
+.g5 {
+    gap: 15px;
+}
+
+.mis5 {
+    margin-inline-start: 5px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+.w100 {
+    width: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
