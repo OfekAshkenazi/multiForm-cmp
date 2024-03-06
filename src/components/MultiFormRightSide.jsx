@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux"
+
 export default function MultiFormRightSide({ setMultiFormState, moveActive }) {
 
+    const multiForm = useSelector((storeState => storeState.multiFormModule.multiForm))
 
+    console.log(multiForm)
 
     return (
         <section>
@@ -16,7 +20,7 @@ export default function MultiFormRightSide({ setMultiFormState, moveActive }) {
 
                 <input type="text" />
             </label>
-            
+
             <label>
 
                 <input type="text" />
