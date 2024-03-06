@@ -1,25 +1,50 @@
 .multi-form-container {
     display: flex;
     flex-direction: row;
-    width: em(940px);
-    // max-width: em(940px);
-    // max-height: em(600px);
-    height: em(600px);
     background-color: $clrwhite;
     border-radius: em(7.5px);
 
-    .left-side-mtc {
-        background-color: blue;
-        // flex-grow: 1;
+    .mtc-container {
+        min-width: em(274px);
+        min-height: em(568px);
+        display: flex;
+        flex-direction: column;
 
+        .multi-form-state-left {
+            padding: em(18.5px) em(20.5px);
+            gap: em(10.5px);
+
+            div {
+                color: $clrwhite;
+
+            }
+
+            h5 {
+                color: $clrLb;
+            }
+
+            &.active {
+                .state-num {
+                    background-color: $clrPAb;
+                    color: $clrMb;
+                }  
+            }
+
+
+            .state-num {
+                border: 1px solid $clrwhite;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+            }
+
+
+        }
 
     }
 
     .right-side-mtc {
-        background-color: red;
         flex-grow: 1;
-
-
+        background-color: red;
     }
-
 }
