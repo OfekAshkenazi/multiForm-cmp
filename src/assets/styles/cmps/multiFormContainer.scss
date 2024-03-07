@@ -20,7 +20,7 @@
             color: $clrwhite;
             background: $clrMb;
             border-radius: em(8px);
-            padding: em(13px) em(26px);
+            padding: em(16px) em(32px);
             margin-right: em(28px);
             font-size: 15px;
         }
@@ -89,7 +89,60 @@
                 font-size: 16px;
             }
 
+            .card-container {
+                display: flex;
+                gap: em(15px);
+
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 138px;
+                    min-height: 160px;
+                    justify-content: space-around;
+
+                    border: 1.5px solid $clrLg;
+                    border-radius: em(8px);
+                    padding: em(0px) em(15px);
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: em(4px);
+                    }
+
+                    img {
+                        max-width: em(40px);
+                        max-height: em(40px);
+                        align-self: start;
+                    }
+                }
+            }
+
+            .second-step-under-cards-area {
+                display: flex;
+                background-color: $clrLg;
+                justify-content: center;
+                gap: em(17.5px);
+                align-items: center;
+                padding: em(10px);
+                border-radius: em(7.5px);
+
+                span {
+                    color: $clrCg;
+                    font-weight: bold;
+
+                    &.active {
+                        color: $clrMb;
+                        font-size: em(16.5px);
+                    }
+                }
+
+
+            }
+
         }
+
+
 
 
     }
@@ -132,6 +185,63 @@
         }
 
     }
+
+
+}
+
+
+.toggle-button {
+    min-width: em(56px);
+    min-height: em(28px);
+    background-color: $clrMb;
+    border-radius: em(14px);
+    position: relative;
+    cursor: pointer;
+
+    .ball {
+        width: em(12px);
+        height: em(12px);
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 2px;
+        transition: transform 0.3s;
+    }
+
+    &.active {
+
+        /* Change to desired color when active */
+        .ball {
+            transform: translateX(28px);
+        }
+    }
+}
+
+
+.btn-box {
+
+    button {
+        color: $clrCg;
+        background-color: white;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+
+    .move-state-btn {
+        display: flex;
+        flex-direction: column;
+        align-self: end;
+        justify-content: center;
+        color: $clrwhite;
+        background: $clrMb;
+        border-radius: em(8px);
+        padding: em(16px) em(32px);
+        font-size: 15px;
+    }
+
 
 
 }
