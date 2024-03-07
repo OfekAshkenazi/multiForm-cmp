@@ -3,10 +3,13 @@ import MultiFormLeftSide from "./MultiFormLeftSide"
 import MultiFormRightSide from "./MultiFormRightSide"
 
 export default function MultiFormContainer() {
-    const [multiFormState, setMultiFormState] = useState(0)
+    const [multiFormState, setMultiFormState] = useState(1)
 
     function moveActive(num) {
-        setMultiFormState(prevmultiFormState => num)
+        if (num) setMultiFormState(prevmultiFormState => num)
+        else {
+            setMultiFormState(prevmultiFormState => prevmultiFormState >= 4 ? prevmultiFormState = 1 : prevmultiFormState + 1)
+        }
     }
 
 
@@ -15,7 +18,7 @@ export default function MultiFormContainer() {
 
             <MultiFormLeftSide moveActive={moveActive} multiFormState={multiFormState} />
 
-            <MultiFormRightSide moveActive={moveActive} multiFormState={multiFormState}/>
+            {multiFormState === 1 && <MultiFormRightSide moveActive={moveActive} multiFormState={multiFormState} />}
 
         </section>
     )

@@ -14,7 +14,7 @@ export default function MultiFormLeftSide({ moveActive, multiFormState }) {
 
         <div className="mtc-container" style={backgroundImage}>
 
-            <div className={`multi-form-state-left ${multiFormState === 0 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(0)}>
+            <div className={`multi-form-state-left ${multiFormState === 1 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(1)}>
 
                 <div className="state-num flex align-center justify-center"> 1 </div>
 
@@ -25,7 +25,7 @@ export default function MultiFormLeftSide({ moveActive, multiFormState }) {
 
             </div>
 
-            <div className={`multi-form-state-left ${multiFormState === 1 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(1)}>
+            <div className={`multi-form-state-left ${multiFormState === 2 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(2)}>
 
                 <div className="state-num flex align-center justify-center"> 2 </div>
 
@@ -36,7 +36,7 @@ export default function MultiFormLeftSide({ moveActive, multiFormState }) {
 
             </div>
 
-            <div className={`multi-form-state-left ${multiFormState === 2 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(2)}>
+            <div className={`multi-form-state-left ${multiFormState === 3 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(3)}>
 
                 <div className="state-num flex align-center justify-center"> 3 </div>
 
@@ -46,7 +46,7 @@ export default function MultiFormLeftSide({ moveActive, multiFormState }) {
                 </div>
 
             </div>
-            <div className={`multi-form-state-left ${multiFormState === 3 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(3)}>
+            <div className={`multi-form-state-left ${multiFormState === 4 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(4)}>
 
                 <div className="state-num flex align-center justify-center"> 4 </div>
 

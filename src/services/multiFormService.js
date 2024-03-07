@@ -7,7 +7,7 @@ export const multiFormService = {
 
 function getEmptyMultiForm() {
     const multiForm = {
-        name: '',
+        username: '',
         email: '',
         phone: ''
     }

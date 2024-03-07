@@ -3,6 +3,70 @@
     flex-direction: row;
     background-color: $clrwhite;
     border-radius: em(7.5px);
+    padding: em(10px) em(15px);
+    min-width: 940px;
+    // every page need to come back here for rest min-width
+
+    .mtc-right-first-step {
+        display: flex;
+        flex-direction: column;
+        padding: em(25px) em(40px);
+
+        .move-state-btn {
+            display: flex;
+            flex-direction: column;
+            align-self: end;
+            justify-content: center;
+            color: $clrwhite;
+            background: $clrMb;
+            border-radius: em(8px);
+            padding: em(13px) em(26px);
+            margin-right: em(28px);
+            font-size: 15px;
+        }
+
+
+
+        .mtc-right-content {
+            flex-grow: 1;
+            padding: em(10px) em(15px);
+            display: flex;
+            flex-direction: column;
+            row-gap: em(10px);
+
+            h2 {
+                font-size: em(30px);
+            }
+
+            p {
+                color: $clrCg;
+                font-size: 16px;
+            }
+
+            form {
+                margin-top: em(35px);
+                display: flex;
+                flex-direction: column;
+                gap: em(28.5px);
+
+                label {
+                    color: $clrMb;
+                    font-weight: bold;
+                    gap: em(9.5px);
+                }
+
+                input {
+                    height: em(48px);
+                    border-radius: 4.5px;
+                    max-width: em(500px);
+                    border: 1.5px solid $clrLg;
+                    padding: em(2.5px) em(20px);
+                }
+            }
+
+
+        }
+    }
 
     .mtc-container {
         min-width: em(274px);
@@ -27,7 +91,7 @@
                 .state-num {
                     background-color: $clrPAb;
                     color: $clrMb;
-                }  
+                }
             }
 
 
@@ -43,8 +107,5 @@
 
     }
 
-    .right-side-mtc {
-        flex-grow: 1;
-        background-color: red;
-    }
+
 }

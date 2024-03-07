@@ -1,31 +1,85 @@
-import { useSelector } from "react-redux"
+import { useState } from "react"
+import { multiFormService } from "../services/multiFormService"
+import updateFirstStepMultiForm from "../store/multiFormActions"
 
-export default function MultiFormRightSide({ setMultiFormState, moveActive }) {
+export default function MultiFormRightSide({moveActive}) {
+    const [multiFormFirstState, SetMultiFormFirstState] = useState(multiFormService.getEmptyMultiForm())
+    // this is for inputs and the multiFormState from father is for pagintion.
 
-    const multiForm = useSelector((storeState => storeState.multiFormModule.multiForm))
+    function handleChange(ev) {
+        const field = ev.target.name
+        const value = ev.target.value
+        SetMultiFormFirstState({ ...multiFormFirstState, [field]: value })
+    }
 
-    console.log(multiForm)
+    function onAddFirstStep(ev) {
+        if (ev) ev.preventDefault()
+        updateFirstStepMultiForm(multiFormFirstState)
+
+    }
+
+    function handleMoveToNextPage() {
+        if (multiFormFirstState.username.length >= 1
+            && multiFormFirstState.email.length >= 1
+            && multiFormFirstState.phone.length >= 1) {
+            onAddFirstStep()
+            moveActive()
+        } else {
+            moveActive()
+        }
+
+    }
+
 
     return (
-        <section>
-            <h4>Personal info</h4>
-            <p>Please provide your name,email address and phone number</p>
+        <section className="mtc-right-first-step" >
 
-            <label>
+            <div className="mtc-right-content">
 
-                <input type="text" />
-            </label>
+                <h2>Personal info</h2>
+                <p>Please provide your name,email address and phone number</p>
 
-            <label>
+                <form onSubmit={(ev) => onAddFirstStep(ev)}>
 
-                <input type="text" />
-            </label>
+                    <label className="flex column">
+                        Name
+                        <input
+                            type="text"
+                            onChange={handleChange}
+                            name={'username'}
+                            value={multiFormFirstState.username}
+                            placeholder="e.g. Stephen king"
+                            required
+                        />
+                    </label>
 
-            <label>
+                    <label className="flex column">
+                        Email Address
+                        <input type="text"
+                            onChange={handleChange}
+                            name={'email'}
+                            value={multiFormFirstState.email}
+                            placeholder="e.g. ofeka18@gmail.com"
+                            required
+                        />
+                    </label>
 
-                <input type="text" />
-            </label>
+                    <label className="flex column">
+                        Phone Number
+                        <input type="text"
+                            onChange={handleChange}
+                            name={'phone'}
+                            value={multiFormFirstState.phone}
+                            placeholder="e.g. +972 543666455"
+                            required
+                        />
+                    </label>
 
+                    <button hidden={true}></button>
+                </form>
+            </div>
+
+            <button className="move-state-btn" onClick={() => handleMoveToNextPage()}>Next Step</button>
 
         </section>
     )
