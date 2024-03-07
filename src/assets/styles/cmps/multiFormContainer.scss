@@ -99,10 +99,20 @@
                     min-width: 138px;
                     min-height: 160px;
                     justify-content: space-around;
+                    cursor: pointer;
 
                     border: 1.5px solid $clrLg;
                     border-radius: em(8px);
                     padding: em(0px) em(15px);
+
+                    &:hover {
+                        border-color: #483EFF;
+                    }
+
+                    &.active {
+                        border-color: #483EFF;
+                    }
+
 
                     div {
                         display: flex;

@@ -2,18 +2,34 @@ import { store } from './store'
 import { UPDATE_MULTIFORM } from "./multiFormReducer"
 
 
-export default function updateFirstStepMultiForm(multiForm) {
+export function updateFirstStepMultiForm(updatemultiForm) {
 
-    const newMultiForm = {
-        username: multiForm.username,
-        email: multiForm.email,
-        phone: multiForm.phone,
+    const multiForm = {
+        username: updatemultiForm.username,
+        email: updatemultiForm.email,
+        phone: updatemultiForm.phone,
         plan: {
-            monthly: null,
-            yearly: null,
-            catagory: []
+            monthly: true,
+            yearly: false,
+            catagory: ""
         }
     }
 
-    store.dispatch({ type: UPDATE_MULTIFORM, newMultiForm })
+    store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
+}
+
+export function updateSecondStep(updatemultiFormFirst, updatemultiFormSecond) {
+
+    const multiForm = {
+        username: updatemultiFormFirst.username,
+        email: updatemultiFormFirst.email,
+        phone: updatemultiFormFirst.phone,
+        plan: {
+            monthly: updatemultiFormSecond.monthly,
+            yearly: updatemultiFormSecond.yearly,
+            catagory: updatemultiFormSecond.catagory
+        }
+    }
+
+    store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
 }

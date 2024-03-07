@@ -21,6 +21,7 @@ export default function MultiFormContainer() {
 
             {multiFormState === 1 && <MultiFormRightSideFirstStep moveActive={moveActive} />}
             {multiFormState === 2 && <MultiFormRightSideSecondStep moveActive={moveActive} multiFormState={multiFormState}/>}
+            {/* {multiFormState === 3 && <MultiFormRightSideSecondStep moveActive={moveActive} multiFormState={multiFormState}/>} */}
 
         </section>
     )

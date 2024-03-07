@@ -1,6 +1,7 @@
-export default function BtnBox({ moveActive, multiFormState }) {
+export default function BtnBox({ moveActive, multiFormState,handleNextPageSecondStep }) {
 
     function handleNextPage() {
+        handleNextPageSecondStep()
         moveActive()
     }
 

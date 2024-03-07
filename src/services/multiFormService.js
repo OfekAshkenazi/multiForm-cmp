@@ -12,7 +12,7 @@ function getEmptyMultiForm() {
         plan: {
             monthly: null,
             yearly: null,
-            catagory: ["Aracde", "Advanced", "Pro"]
+            catagory: ""
         }
     }
 
@@ -20,13 +20,12 @@ function getEmptyMultiForm() {
 }
 
 function getEmptyMultiFormSecondStep() {
-    const multiForm = {
-        plan: {
-            monthly: null,
-            yearly: null,
-            catagory: ["Aracde", "Advanced", "Pro"]
-        }
+
+    const plan =  {
+        monthly: true,
+        yearly: false,
+        catagory: ""
     }
 
-    return multiForm
+    return plan
 }

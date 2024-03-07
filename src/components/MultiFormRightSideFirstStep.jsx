@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { multiFormService } from "../services/multiFormService"
-import updateFirstStepMultiForm from "../store/multiFormActions"
+import {updateFirstStepMultiForm} from "../store/multiFormActions"
 import { useSelector } from "react-redux"
 
 export default function MultiFormRightSideFirstStep({moveActive}) {
