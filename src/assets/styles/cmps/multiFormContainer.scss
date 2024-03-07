@@ -68,6 +68,32 @@
         }
     }
 
+    .mtc-right-second-step {
+        display: flex;
+        flex-direction: column;
+        padding: em(25px) em(40px);
+
+        .mtc-right-second-content {
+            flex-grow: 1;
+            padding: em(10px) em(15px);
+            display: flex;
+            flex-direction: column;
+            row-gap: em(10px);
+
+            h2 {
+                font-size: em(30px);
+            }
+
+            p {
+                color: $clrCg;
+                font-size: 16px;
+            }
+
+        }
+
+
+    }
+
     .mtc-container {
         min-width: em(274px);
         min-height: em(568px);

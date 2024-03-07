@@ -3,6 +3,17 @@ import { UPDATE_MULTIFORM } from "./multiFormReducer"
 
 
 export default function updateFirstStepMultiForm(multiForm) {
-    store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
-    return console.log('sucess')
+
+    const newMultiForm = {
+        username: multiForm.username,
+        email: multiForm.email,
+        phone: multiForm.phone,
+        plan: {
+            monthly: null,
+            yearly: null,
+            catagory: []
+        }
+    }
+
+    store.dispatch({ type: UPDATE_MULTIFORM, newMultiForm })
 }

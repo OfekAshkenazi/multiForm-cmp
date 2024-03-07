@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { multiFormService } from "../services/multiFormService"
 import updateFirstStepMultiForm from "../store/multiFormActions"
+import { useSelector } from "react-redux"
 
-export default function MultiFormRightSide({moveActive}) {
-    const [multiFormFirstState, SetMultiFormFirstState] = useState(multiFormService.getEmptyMultiForm())
-    // this is for inputs and the multiFormState from father is for pagintion.
+export default function MultiFormRightSideFirstStep({moveActive}) {
+    const multiForm = useSelector(storeState => storeState.multiFormModule.multiForm)
+    const [multiFormFirstState, SetMultiFormFirstState] = useState(multiForm ? multiForm : multiFormService.getEmptyMultiForm())
 
     function handleChange(ev) {
         const field = ev.target.name

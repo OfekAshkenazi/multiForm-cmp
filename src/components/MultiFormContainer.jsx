@@ -1,6 +1,7 @@
 import { useState } from "react"
 import MultiFormLeftSide from "./MultiFormLeftSide"
-import MultiFormRightSide from "./MultiFormRightSide"
+import MultiFormRightSideFirstStep from "./MultiFormRightSideFirstStep"
+import MultiFormRightSideSecondStep from "./MultiFormRightSideSecondStep"
 
 export default function MultiFormContainer() {
     const [multiFormState, setMultiFormState] = useState(1)
@@ -18,7 +19,8 @@ export default function MultiFormContainer() {
 
             <MultiFormLeftSide moveActive={moveActive} multiFormState={multiFormState} />
 
-            {multiFormState === 1 && <MultiFormRightSide moveActive={moveActive} multiFormState={multiFormState} />}
+            {multiFormState === 1 && <MultiFormRightSideFirstStep moveActive={moveActive} />}
+            {multiFormState === 2 && <MultiFormRightSideSecondStep moveActive={moveActive} />}
 
         </section>
     )
