@@ -16,13 +16,12 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
     // for toggle btn
 
     useEffect(() => {
-        console.log('trigger')
     }, [isActive])
 
     function handleClick() {
         setIsActive(!isActive)
 
-        
+
         SetMultiFormSecondState(prevmultiFormSecondState => ({
             ...prevmultiFormSecondState,
             monthly: !isActive,
@@ -42,6 +41,7 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
 
     return (
         <section className="mtc-right-second-step">
+
             <div className="mtc-right-second-content">
 
                 <h2>Select your plan</h2>
@@ -53,7 +53,12 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
                         <img src={ArcadeImg} alt="" />
                         <div className="">
                             <h4>Arcade</h4>
-                            <p>$9/mo</p>
+                            {!isActive ?
+                                <div className="">
+                                    <p>$90/yr</p>
+                                    <span>2 months free</span>
+                                </div>
+                                : <p>$9/mo</p>}
                         </div>
                     </div>
 
@@ -61,7 +66,12 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
                         <img src={AdvancedImg} alt="" />
                         <div>
                             <h4>Advanced</h4>
-                            <p>$12/mo</p>
+                            {!isActive ?
+                                <div className="">
+                                    <p>$120/yr</p>
+                                    <span>2 months free</span>
+                                </div>
+                                : <p>$12/mo</p>}
                         </div>
                     </div>
 
@@ -69,7 +79,12 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
                         <img src={ProImg} alt="" />
                         <div className="">
                             <h4>Pro</h4>
-                            <p>$15/mo</p>
+                            {!isActive ?
+                                <div className="">
+                                    <p>$150/yr</p>
+                                    <span>2 months free</span>
+                                </div>
+                                : <p>$15/mo</p>}
                         </div>
                     </div>
 
@@ -86,7 +101,6 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
                     <span className={`${!isActive ? 'active' : ''}`}>Yearly</span>
 
                 </div>
-
 
             </div>
 

@@ -125,6 +125,12 @@
                         max-height: em(40px);
                         align-self: start;
                     }
+
+                    span {
+                        color: $clrMb;
+                        font-weight: bold;
+                        font-size: em(13px);
+                    }
                 }
             }
 
