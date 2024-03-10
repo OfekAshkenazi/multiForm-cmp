@@ -1,4 +1,4 @@
-export default function BtnBox({ moveActive, multiFormState, next }) {
+export default function BtnBox({ moveActive, multiFormState, confirmPage }) {
 
     function handleNextPage() {
         moveActive()
@@ -12,7 +12,7 @@ export default function BtnBox({ moveActive, multiFormState, next }) {
     return (
         <div className="btn-box flex space-bet">
             <button onClick={() => handleBackPage()}>Go Back</button>
-            <button className="move-state-btn" onClick={() => handleNextPage()}>Next Step</button>
+            <button className="move-state-btn" onClick={() => handleNextPage()}>{confirmPage ? 'Confirm' : 'Next Step'}</button>
         </div>
     )
 }

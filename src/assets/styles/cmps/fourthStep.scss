@@ -9,7 +9,8 @@
         display: flex;
         flex-direction: column;
         row-gap: em(10px);
-        // min-width: em(480px);
+        // need to remove this later
+        min-width: em(480px);
 
         h2 {
             font-size: em(30px);
@@ -20,7 +21,64 @@
             color: $clrCg;
             font-size: 16px;
         }
+        
+        .total {
+            .total-big {
+               font-weight: bold;
+               font-size: em(18.5px);
+               color: $clrPUb;
+            }
+        }
 
+        .finishing-up-container {
+            display: flex;
+            flex-direction: column;
+            gap: em(7px);
+            background-color: #f8f9ff;
+            // background-color: red;
+
+            padding: em(10px) em(17px);
+            border-radius: em(8px);
+
+            .border {
+                border-bottom: 1px solid #9699aa96;
+                margin-top: em(20px);
+            }
+
+
+            .multiForm-p-c-container {
+                align-items: center;
+
+                .multiForm-p-c-left {
+                    display: flex;
+                    flex-direction: column;
+                    gap: em(7px);
+
+                    p {
+                        color: $clrMb;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        color: #a8abba;
+                        text-decoration: underline;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $clrPUb;
+                        }
+                    }
+                }
+            }
+
+            .add-one-box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: em(15.5px);
+            }
+
+        }
 
 
     }

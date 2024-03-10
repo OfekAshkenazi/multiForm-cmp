@@ -20,7 +20,6 @@ export default function MultiFormRIghtSidetFourthStep({ moveActive, multiFormSta
         }
     }
 
-    console.log(sumFormCost())
 
     function sumFormCost() {
         const sumAddOnesCost = storeMultiForm.addOnes.reduce((acc, addone) => {
@@ -29,7 +28,7 @@ export default function MultiFormRIghtSidetFourthStep({ moveActive, multiFormSta
 
         let sumPlanCosts = sumPlanCost()
 
-        return console.log(sumPlanCosts += sumAddOnesCost)
+        return sumPlanCosts += sumAddOnesCost
 
     }
 
@@ -40,20 +39,22 @@ export default function MultiFormRIghtSidetFourthStep({ moveActive, multiFormSta
                 <p>Double-check everything looks OK before confirming.</p>
 
                 <div className="finishing-up-container">
-                    <div className="flex">
-                        <div className="">
+
+                    <div className="multiForm-p-c-container flex space-bet">
+                        <div className="multiForm-p-c-left">
                             <p>{`${storeMultiForm.plan.catagory} (${storeMultiForm.plan.monthly ? 'Monthly' : 'Yearly'})`}</p>
-                            <span>Change</span>
+                            <span onClick={() => moveActive(2)}>Change</span>
                         </div>
-                        <div className="">{`$${storeMultiForm.plan.monthly ? sumPlanCost() : `${sumPlanCost()}0`}`}</div>
+                        <div className="bold">{`$${storeMultiForm.plan.monthly ? `${sumPlanCost()}/${storeMultiForm.plan.monthly ? 'mo' : 'yr'}` : `${sumPlanCost()}0/yr`}`}</div>
                     </div>
 
+                    <div className="border"></div>
 
                     {storeMultiForm.addOnes && storeMultiForm.addOnes.map((addOne, idx) => {
                         return (
-                            <div key={`${addOne}-${idx}`} className="">
-                                <p>{addOne}</p>
-                                <p>
+                            <div key={`${addOne}-${idx}`} className="add-one-box">
+                                <p>{addOne.split('-').join(' ')}</p>
+                                <p className="bold">
                                     {`+$${addOne === "online-service" ? (storeMultiForm.plan.monthly ? '1' : '10') : (storeMultiForm.plan.monthly ? '2' : '20')}/${storeMultiForm.plan.monthly ? 'mo' : 'yr'}`}
                                 </p>
                             </div>
@@ -62,18 +63,14 @@ export default function MultiFormRIghtSidetFourthStep({ moveActive, multiFormSta
 
                 </div>
 
-                <div className="">
+                <div className="total padding-total flex space-bet">
                     <p>Total ({`per ${storeMultiForm.plan.monthly ? 'month' : 'year'}`})</p>
-                    <p>+${`${sumFormCost()}/${storeMultiForm.plan.monthly ? 'mo' : 'yr'}`}</p>
+                    <p className="total-big">+${`${sumFormCost()}/${storeMultiForm.plan.monthly ? 'mo' : 'yr'}`}</p>
 
                 </div>
 
-
-                <BtnBox moveActive={moveActive} multiFormState={multiFormState} />
-
-
-
             </div>
+            <BtnBox moveActive={moveActive} multiFormState={multiFormState} confirmPage={true} />
 
         </section>
     )
