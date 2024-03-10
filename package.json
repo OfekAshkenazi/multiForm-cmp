@@ -2,7 +2,7 @@
   "name": "multi-form-cmp",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://OfekAshkenazi.github.io/multiForm-cmp",
+  "homepage": "https://github.com/OfekAshkenazi/multiForm-cmp",
   "type": "module",
   "scripts": {
     "dev": "vite",
