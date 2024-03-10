@@ -1,0 +1,27 @@
+.mtc-right-fourth-step {
+    display: flex;
+    flex-direction: column;
+    padding: em(25px) em(40px);
+
+    .mtc-right-fourth-content {
+        flex-grow: 1;
+        padding: em(10px) em(15px);
+        display: flex;
+        flex-direction: column;
+        row-gap: em(10px);
+        // min-width: em(480px);
+
+        h2 {
+            font-size: em(30px);
+            color: $clrMb;
+        }
+
+        p {
+            color: $clrCg;
+            font-size: 16px;
+        }
+
+
+
+    }
+}

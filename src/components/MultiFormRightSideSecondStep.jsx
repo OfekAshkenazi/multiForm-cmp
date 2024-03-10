@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { multiFormService } from "../services/multiFormService"
 
 import ArcadeImg from "../assets/images/icon-arcade.svg"
 import AdvancedImg from "../assets/images/icon-advanced.svg"
@@ -11,31 +10,26 @@ import { updateSecondStep } from "../store/multiFormActions"
 
 export default function MultiFormRightSideSecondStep({ moveActive, multiFormState }) {
     const storeMultiForm = useSelector(storeState => storeState.multiFormModule.multiForm)
-    const [multiFormSecondState, SetMultiFormSecondState] = useState(storeMultiForm)
     const [isActive, setIsActive] = useState(storeMultiForm.plan.monthly ? true : false)
 
-
     useEffect(() => {
-        updateSecondStep(multiFormSecondState,isActive)
+        updateSecondStep(storeMultiForm, isActive)
+
     }, [isActive])
-    
+
     function handleClick() {
         setIsActive(!isActive)
     }
 
-
-
     function handleChangePlanCatagory(Plan) {
 
-        multiFormSecondState.plan.catagory = Plan
+        storeMultiForm.plan.catagory = Plan
 
-        updateSecondStep(multiFormSecondState)
+        updateSecondStep(storeMultiForm,isActive)
 
     }
 
-    function handleNextPageSecondStep() {
-        updateSecondStep(multiFormSecondState)
-    }
+  
 
 
     return (
@@ -48,7 +42,7 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
 
                 <div className="card-container">
 
-                    <div className={`card ${multiFormSecondState.plan.catagory === 'Arcade' && 'active'}`} onClick={() => handleChangePlanCatagory("Arcade")}>
+                    <div className={`card ${storeMultiForm.plan.catagory === 'Arcade' && 'active'}`} onClick={() => handleChangePlanCatagory("Arcade")}>
                         <img src={ArcadeImg} alt="" />
                         <div className="">
                             <h4>Arcade</h4>
@@ -61,7 +55,7 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
                         </div>
                     </div>
 
-                    <div className={`card ${multiFormSecondState.plan.catagory === 'Advanced' && 'active'}`} onClick={() => handleChangePlanCatagory("Advanced")}>
+                    <div className={`card ${storeMultiForm.plan.catagory === 'Advanced' && 'active'}`} onClick={() => handleChangePlanCatagory("Advanced")}>
                         <img src={AdvancedImg} alt="" />
                         <div>
                             <h4>Advanced</h4>
@@ -74,7 +68,7 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
                         </div>
                     </div>
 
-                    <div className={`card ${multiFormSecondState.plan.catagory === 'Pro' && 'active'}`} onClick={() => handleChangePlanCatagory("Pro")}>
+                    <div className={`card ${storeMultiForm.plan.catagory === 'Pro' && 'active'}`} onClick={() => handleChangePlanCatagory("Pro")}>
                         <img src={ProImg} alt="" />
                         <div className="">
                             <h4>Pro</h4>
@@ -103,7 +97,7 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
 
             </div>
 
-            <BtnBox moveActive={moveActive} multiFormState={multiFormState} next={handleNextPageSecondStep} />
+            <BtnBox moveActive={moveActive} multiFormState={multiFormState}  />
 
         </section>
     )

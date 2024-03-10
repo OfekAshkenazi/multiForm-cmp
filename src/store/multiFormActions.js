@@ -20,13 +20,14 @@ export function updateFirstStepMultiForm(updatemultiForm) {
 }
 
 export function updateSecondStep(multiFormFront, isActive) {
+    console.log(isActive)
     const multiForm = {
         username: multiFormFront.username,
         email: multiFormFront.email,
         phone: multiFormFront.phone,
         plan: {
-            monthly: multiFormFront.monthly ? multiFormFront.monthly : isActive === true ? true : false,
-            yearly: multiFormFront.yearly ? multiFormFront.yearly : isActive === true ? false : true,
+            monthly: isActive === true ? true : false,
+            yearly: isActive === true ? false : true,
             catagory: multiFormFront.plan.catagory
         },
         addOnes: multiFormFront.addOnes || []
