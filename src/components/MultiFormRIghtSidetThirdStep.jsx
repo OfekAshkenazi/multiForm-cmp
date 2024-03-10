@@ -8,13 +8,14 @@ export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormStat
     const storeMultiForm = useSelector((storeState => storeState.multiFormModule.multiForm))
     const [addOns, setAddOns] = useState([])
 
+
     function handleAddOnes(ev) {
         const idx = addOns.indexOf(ev.target.name)
         idx >= 0 ? addOns.splice(idx, 1) : addOns.push(ev.target.name)
     }
 
     function onUpdateThirdStep() {
-        updateThirdStep(storeMultiForm,addOns)
+        updateThirdStep(storeMultiForm, addOns)
     }
 
     return (
@@ -59,7 +60,7 @@ export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormStat
 
                         <div className="add-one-left">
 
-                            <input type="checkbox"  name="customizable-profile" id="" onChange={(ev) => handleAddOnes(ev)} />
+                            <input type="checkbox" name="customizable-profile" id="" onChange={(ev) => handleAddOnes(ev)} />
                             <div className="">
                                 <h4>Customizable profile</h4>
                                 <p>Custom theme on your profile</p>
@@ -79,7 +80,7 @@ export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormStat
             </div>
 
 
-            <BtnBox moveActive={moveActive} multiFormState={multiFormState} next={onUpdateThirdStep}/>
+            <BtnBox moveActive={moveActive} multiFormState={multiFormState} next={onUpdateThirdStep} />
 
 
         </section>

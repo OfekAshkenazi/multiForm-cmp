@@ -41,9 +41,9 @@ export function updateThirdStep(multiFormStore, updateAddOns) {
         email: multiFormStore.email,
         phone: multiFormStore.phone,
         plan: {
-            monthly: multiFormStore.monthly,
-            yearly: multiFormStore.yearly,
-            catagory: multiFormStore.catagory
+            monthly: multiFormStore.plan.monthly,
+            yearly: multiFormStore.plan.yearly,
+            catagory: multiFormStore.plan.catagory
         },
         addOns: updateAddOns || []
     }
