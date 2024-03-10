@@ -6,12 +6,16 @@ import { updateThirdStep } from "../store/multiFormActions"
 
 export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormState }) {
     const storeMultiForm = useSelector((storeState => storeState.multiFormModule.multiForm))
-    const [addOns, setAddOns] = useState([])
+    const [addOns, setAddOns] = useState(storeMultiForm.addOnes)
 
+    // useEffect(() => {
+    //     console.log('trigger')
+    // }, [addOns])
 
     function handleAddOnes(ev) {
         const idx = addOns.indexOf(ev.target.name)
         idx >= 0 ? addOns.splice(idx, 1) : addOns.push(ev.target.name)
+        updateThirdStep(storeMultiForm, addOns)
     }
 
     function onUpdateThirdStep() {
@@ -30,7 +34,7 @@ export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormStat
 
                         <div className="add-one-left">
 
-                            <input type="checkbox" name="online-service" id="" onChange={(ev) => handleAddOnes(ev)} />
+                            <input type="checkbox" checked={addOns.indexOf('online-service') > -1} name="online-service" id="" onChange={(ev) => handleAddOnes(ev)} />
                             <div className="">
                                 <h4>Online service</h4>
                                 <p>Access to multiplayer games</p>
@@ -45,7 +49,7 @@ export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormStat
 
                         <div className="add-one-left">
 
-                            <input type="checkbox" name="larger-stoarge" id="" onChange={(ev) => handleAddOnes(ev)} />
+                            <input type="checkbox" checked={addOns.indexOf('larger-stoarge') > -1} name="larger-stoarge" id="" onChange={(ev) => handleAddOnes(ev)} />
                             <div className="">
                                 <h4>Larger storage</h4>
                                 <p>Extra 1TB of cloud save</p>
@@ -60,7 +64,7 @@ export default function MultiFormRIghtSidetThirdStep({ moveActive, multiFormStat
 
                         <div className="add-one-left">
 
-                            <input type="checkbox" name="customizable-profile" id="" onChange={(ev) => handleAddOnes(ev)} />
+                            <input type="checkbox" checked={addOns.indexOf('customizable-profile') > -1} name="customizable-profile" id="" onChange={(ev) => handleAddOnes(ev)} />
                             <div className="">
                                 <h4>Customizable profile</h4>
                                 <p>Custom theme on your profile</p>

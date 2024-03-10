@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 
 export default function MultiFormRightSideFirstStep({moveActive}) {
     const multiForm = useSelector(storeState => storeState.multiFormModule.multiForm)
-    const [multiFormFirstState, SetMultiFormFirstState] = useState(multiForm ? multiForm : multiFormService.getEmptyMultiForm())
+    const [multiFormFirstState, SetMultiFormFirstState] = useState(multiForm)
 
     function handleChange(ev) {
         const field = ev.target.name

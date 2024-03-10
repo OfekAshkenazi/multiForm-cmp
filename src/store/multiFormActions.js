@@ -9,26 +9,27 @@ export function updateFirstStepMultiForm(updatemultiForm) {
         email: updatemultiForm.email,
         phone: updatemultiForm.phone,
         plan: {
-            monthly: true,
-            yearly: false,
-            catagory: ""
-        }
+            monthly: updatemultiForm.plan.monthly,
+            yearly: updatemultiForm.plan.yearly,
+            catagory: updatemultiForm.plan.catagory
+        },
+        addOnes: updatemultiForm.addOnes || []
     }
 
     store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
 }
 
-export function updateSecondStep(updatemultiFormFirst, updatemultiFormSecond) {
-
+export function updateSecondStep(multiFormFront, isActive) {
     const multiForm = {
-        username: updatemultiFormFirst.username,
-        email: updatemultiFormFirst.email,
-        phone: updatemultiFormFirst.phone,
+        username: multiFormFront.username,
+        email: multiFormFront.email,
+        phone: multiFormFront.phone,
         plan: {
-            monthly: updatemultiFormSecond.monthly,
-            yearly: updatemultiFormSecond.yearly,
-            catagory: updatemultiFormSecond.catagory
-        }
+            monthly: multiFormFront.monthly ? multiFormFront.monthly : isActive === true ? true : false,
+            yearly: multiFormFront.yearly ? multiFormFront.yearly : isActive === true ? false : true,
+            catagory: multiFormFront.plan.catagory
+        },
+        addOnes: multiFormFront.addOnes || []
     }
 
     store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
@@ -45,7 +46,7 @@ export function updateThirdStep(multiFormStore, updateAddOns) {
             yearly: multiFormStore.plan.yearly,
             catagory: multiFormStore.plan.catagory
         },
-        addOns: updateAddOns || []
+        addOnes: multiFormStore.addOnes.length >= 1 && multiFormStore.addOnes || updateAddOns || []
     }
 
     store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
