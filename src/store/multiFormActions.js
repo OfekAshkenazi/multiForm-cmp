@@ -33,3 +33,20 @@ export function updateSecondStep(updatemultiFormFirst, updatemultiFormSecond) {
 
     store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
 }
+
+export function updateThirdStep(multiFormStore, updateAddOns) {
+
+    const multiForm = {
+        username: multiFormStore.username,
+        email: multiFormStore.email,
+        phone: multiFormStore.phone,
+        plan: {
+            monthly: multiFormStore.monthly,
+            yearly: multiFormStore.yearly,
+            catagory: multiFormStore.catagory
+        },
+        addOns: updateAddOns || []
+    }
+
+    store.dispatch({ type: UPDATE_MULTIFORM, multiForm })
+}

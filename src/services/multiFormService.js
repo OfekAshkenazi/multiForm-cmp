@@ -10,10 +10,11 @@ function getEmptyMultiForm() {
         email: '',
         phone: '',
         plan: {
-            monthly: null,
+            monthly: true,
             yearly: null,
             catagory: ""
-        }
+        },
+        addOns: []
     }
 
     return multiForm
