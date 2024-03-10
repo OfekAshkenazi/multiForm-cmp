@@ -46,7 +46,7 @@ export default function MultiFormLeftSide({ moveActive, multiFormState }) {
                 </div>
 
             </div>
-            <div className={`multi-form-state-left ${multiFormState === 4 ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(4)}>
+            <div className={`multi-form-state-left ${multiFormState === 4 || multiFormState === 5  ? 'active' : ''} flex align-center`} onClick={(ev) => moveActive(4)}>
 
                 <div className="state-num flex align-center justify-center"> 4 </div>
 
