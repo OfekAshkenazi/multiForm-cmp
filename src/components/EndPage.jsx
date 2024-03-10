@@ -10,8 +10,13 @@ export default function EndPage() {
                 </div>
 
                 <h1>Thank you!</h1>
-                <p>Thanks for confirming your subscription! We hope you have fun using my platform. If you ever need support, please feel free to email me at ofeka18@gmail.com.</p>
-                
+                <p>
+                    Thanks for confirming your subscription!
+                    We hope you have fun using my platform.
+                    If you ever need support,
+                    please feel free to email me at ofeka18@gmail.com.
+                </p>
+
             </div>
         </section>
     )

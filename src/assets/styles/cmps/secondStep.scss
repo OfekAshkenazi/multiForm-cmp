@@ -1,0 +1,93 @@
+.mtc-right-second-step {
+    display: flex;
+    flex-direction: column;
+    padding: em(25px) em(40px);
+    
+    @media (max-width:900px) {
+        padding: em(5px) em(10px);
+        
+    }
+
+    .mtc-right-second-content {
+        flex-grow: 1;
+        padding: em(10px) em(15px);
+        display: flex;
+        flex-direction: column;
+        row-gap: em(10px);
+
+        h2 {
+            font-size: em(30px);
+            color: $clrMb;
+        }
+
+        p {
+            color: $clrCg;
+            font-size: 16px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: em(15px);
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                min-width: 138px;
+                min-height: 160px;
+                justify-content: space-around;
+                cursor: pointer;
+
+                border: 1.5px solid $clrLg;
+                border-radius: em(8px);
+                padding: em(0px) em(15px);
+
+                &:hover {
+                    border-color: #483EFF;
+                }
+
+                &.active {
+                    border-color: #483EFF;
+                }
+
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: em(4px);
+                }
+
+                img {
+                    max-width: em(40px);
+                    max-height: em(40px);
+                    align-self: start;
+                }
+
+                span {
+                    color: $clrMb;
+                    font-weight: bold;
+                    font-size: em(13px);
+                }
+            }
+        }
+
+        .second-step-under-cards-area {
+            display: flex;
+            background-color: $clrLg;
+            justify-content: center;
+            gap: em(17.5px);
+            align-items: center;
+            padding: em(10px);
+            border-radius: em(7.5px);
+
+            span {
+                color: $clrCg;
+                font-weight: bold;
+
+                &.active {
+                    color: $clrMb;
+                    font-size: em(16.5px);
+                }
+            }
+        }
+    }
+}

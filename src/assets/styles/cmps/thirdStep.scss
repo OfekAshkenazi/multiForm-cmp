@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
     padding: em(25px) em(40px);
+    @media (max-width:900px) {
+        padding: em(5px) em(5px);
+        
+    }
 
     .mtc-right-third-content {
         flex-grow: 1;
@@ -10,6 +14,9 @@
         flex-direction: column;
         row-gap: em(10px);
         min-width: em(480px);
+
+       
+    
 
         h2 {
             font-size: em(30px);
