@@ -104,7 +104,7 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
 
             </div>
 
-            <BtnBox moveActive={moveActive} multiFormState={multiFormState} handleNextPageSecondStep={handleNextPageSecondStep} />
+            <BtnBox moveActive={moveActive} multiFormState={multiFormState} next={handleNextPageSecondStep} />
 
         </section>
     )
