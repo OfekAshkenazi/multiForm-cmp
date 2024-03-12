@@ -20,7 +20,6 @@ export function updateFirstStepMultiForm(updatemultiForm) {
 }
 
 export function updateSecondStep(multiFormFront, isActive) {
-    console.log(isActive)
     const multiForm = {
         username: multiFormFront.username,
         email: multiFormFront.email,

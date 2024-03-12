@@ -14,7 +14,6 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
 
     useEffect(() => {
         updateSecondStep(storeMultiForm, isActive)
-
     }, [isActive])
 
     function handleClick() {
@@ -22,15 +21,10 @@ export default function MultiFormRightSideSecondStep({ moveActive, multiFormStat
     }
 
     function handleChangePlanCatagory(Plan) {
-
         storeMultiForm.plan.catagory = Plan
 
         updateSecondStep(storeMultiForm,isActive)
-
     }
-
-  
-
 
     return (
         <section className="mtc-right-second-step">
