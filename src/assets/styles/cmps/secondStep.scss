@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     padding: em(25px) em(40px);
-    
+
     @media (max-width:900px) {
         padding: em(5px) em(10px);
-        
     }
+
 
     .mtc-right-second-content {
         flex-grow: 1;
@@ -29,6 +29,11 @@
             display: flex;
             gap: em(15px);
 
+            @media (max-width:500px) {
+                gap: em(2.5px);
+            }
+
+
             .card {
                 display: flex;
                 flex-direction: column;
@@ -37,9 +42,15 @@
                 justify-content: space-around;
                 cursor: pointer;
 
+                @media (max-width:500px) {
+                    min-width: 100px;
+                    min-height: 125px;
+                }
+
                 border: 1.5px solid $clrLg;
                 border-radius: em(8px);
-                padding: em(0px) em(15px);
+                padding-left: em(15px);
+                padding-right: em(7px);
 
                 &:hover {
                     border-color: #483EFF;

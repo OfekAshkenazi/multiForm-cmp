@@ -8,28 +8,29 @@ export default function MultiFormRIghtSidetFourthStep({ moveActive, multiFormSta
         let sumPlanCost
 
         if (storeMultiForm.plan.catagory === "Arcade") {
-            return sumPlanCost = 9
+            storeMultiForm.plan.monthly ? sumPlanCost = 9 : sumPlanCost = 90
+            return sumPlanCost
         }
         if (storeMultiForm.plan.catagory === "Advanced") {
-            return sumPlanCost = 12
+            storeMultiForm.plan.monthly ? sumPlanCost = 12 : sumPlanCost = 120
+            return sumPlanCost
         }
         if (storeMultiForm.plan.catagory === "Pro") {
-            return sumPlanCost = 15
+            storeMultiForm.plan.monthly ? sumPlanCost = 15 : sumPlanCost = 150
+            return sumPlanCost
         } else {
             return sumPlanCost = 0
         }
     }
 
-
     function sumFormCost() {
-        const sumAddOnesCost = storeMultiForm.addOnes.reduce((acc, addone) => {
+        let sumAddOnesCost = storeMultiForm.addOnes.reduce((acc, addone) => {
             return addone === "online-service" ? acc + 1 : acc + 2
         }, 0)
-
+        storeMultiForm.plan.monthly ? sumAddOnesCost = sumAddOnesCost : sumAddOnesCost += "0"
         let sumPlanCosts = sumPlanCost()
-
-        return sumPlanCosts += sumAddOnesCost
-
+        const total = +sumPlanCosts + +sumAddOnesCost
+        return total
     }
 
     return (
@@ -45,7 +46,7 @@ export default function MultiFormRIghtSidetFourthStep({ moveActive, multiFormSta
                             <p>{`${storeMultiForm.plan.catagory} (${storeMultiForm.plan.monthly ? 'Monthly' : 'Yearly'})`}</p>
                             <span onClick={() => moveActive(2)}>Change</span>
                         </div>
-                        <div className="bold">{`$${storeMultiForm.plan.monthly ? `${sumPlanCost()}/${storeMultiForm.plan.monthly ? 'mo' : 'yr'}` : `${sumPlanCost()}0/yr`}`}</div>
+                        <div className="bold">{`$${storeMultiForm.plan.monthly ? `${sumPlanCost()}/${storeMultiForm.plan.monthly ? 'mo' : 'yr'}` : `${sumPlanCost()}/yr`}`}</div>
                     </div>
 
                     <div className="border"></div>
