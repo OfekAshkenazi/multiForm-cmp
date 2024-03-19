@@ -21,7 +21,7 @@ Navigate to the directory and run npm i && npm run dev
 ## Screenshots
 
 ### Mobile view
-![Mobile view](/src/assets/images/movileView.png)
+![Mobile view](/src/assets/images/mobileView.png)
 
 ### First step
 ![First step](/src/assets/images/stage1.png)
