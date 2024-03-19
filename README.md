@@ -1,8 +1,43 @@
-# React + Vite
+# Multi form 
+Multi form is a web form that allow the user sign up and choose alot of things plans and add ones.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Link to live demo
+https://ofekashkenazi.github.io/multiForm-cmp/
 
-Currently, two official plugins are available:
+## Features
+- Responsive and well-designed user interface.
+- Redux uses around the app. for when moving from step to step the data is saved.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+To run this app locally on your computer, follow these steps:
+
+```bash
+Clone the project or download the files
+```
+```bash
+Navigate to the directory and run npm i && npm run dev
+```
+    
+## Screenshots
+
+### Mobile view
+![Mobile view](/src/assets/images/movileView.png)
+
+### First step
+![First step](/src/assets/images/stage1.png)
+
+### Second step - select plan
+![Second step](/src/assets/images/stage2.png)
+
+### Third step - add ones
+![Third step](/src/assets/images/stage3.png)
+
+### Fourth step - confirm
+![Fourth step](/src/assets/images/stage4.png)
+
+### Summary step
+![Summary step](/src/assets/images/lastStage.png)
+
+
+## Authors
+- [@Ofek Ashkenazi](https://github.com/OfekAshkenazi/)
